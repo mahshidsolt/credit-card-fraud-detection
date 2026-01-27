@@ -1,0 +1,48 @@
+# attempt 1 XGB params
+    params = {
+        "n_estimators": [200, 300, 500],
+        "learning_rate": [0.1, 0.01, 0.03],
+        "scale_pos_weight": [10, 15, 20, 25]
+    }
+
+scoring= 'f1'
+
+results:
+
+    Best parameters found by GridSearchCV:
+    {'scale_pos_weight': 20, 'n_estimators': 500, 'learning_rate': 0.1}
+
+Classification Report for the Best Model:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     56864
+           1       0.95      0.85      0.90        98
+
+    accuracy                           1.00     56962
+   macro avg       0.98      0.92      0.95     56962
+weighted avg       1.00      1.00      1.00     56962
+
+
+# attempt 2 XGB params
+    params = {
+        "n_estimators": [200, 300, 500],
+        "learning_rate": [0.1, 0.01, 0.03],
+        "scale_pos_weight": [10, 15, 20, 25]
+    }
+
+scoring= 'recall'
+
+results:
+    Best parameters found by GridSearchCV:
+    {'scale_pos_weight': 25, 'n_estimators': 200, 'learning_rate': 0.1}
+
+Classification Report for the Best Model:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     56864
+           1       0.94      0.85      0.89        98
+
+    accuracy                           1.00     56962
+   macro avg       0.97      0.92      0.95     56962
+weighted avg       1.00      1.00      1.00     56962
+
